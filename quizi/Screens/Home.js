@@ -22,38 +22,58 @@ const Home = () => {
       <View style={styles.HomeMid}>
         <View style={styles.MidCards}>
           <View style={styles.CardsTop}>
-            {/* Wrap your card views with Pressable */}
-            <Pressable style={styles.TopCard1}>
-              <Image
-                source={require("../assets/BasketBall.png")}
-                alt="BasketBall"
-                style={styles.TopCard1img}
-              />
-            </Pressable>
-            <Pressable style={styles.TopCard2}>
-              <Image
-                source={require("../assets/Rocket.png")}
-                alt="Rocket"
-                style={styles.TopCard2img}
-              />
-            </Pressable>
+            {/* Top Card 1 */}
+            <View style={styles.TopCard}>
+              <Pressable style={styles.TopCard1}>
+                <Image
+                  source={require("../assets/BasketBall.png")}
+                  alt="BasketBall"
+                  style={styles.TopCard1img}
+                />
+              </Pressable>
+              <Text style={styles.TopCardTitle}>Sports</Text>
+              {/* Title for Top Card 1 */}
+            </View>
+
+            {/* Top Card 2 */}
+            <View style={styles.TopCard}>
+              <Pressable style={styles.TopCard2}>
+                <Image
+                  source={require("../assets/Rocket.png")}
+                  alt="Rocket"
+                  style={styles.TopCard2img}
+                />
+              </Pressable>
+              <Text style={styles.TopCardTitle}>Science</Text>
+              {/* Title for Top Card 2 */}
+            </View>
           </View>
           <View style={styles.CardsBottom}>
-            {/* Wrap your card views with Pressable */}
-            <Pressable style={styles.BottomCard1}>
-              <Image
-                source={require("../assets/Business.png")}
-                alt="Business"
-                style={styles.BottomCard1img}
-              />
-            </Pressable>
-            <Pressable style={styles.BottomCard2}>
-              <Image
-                source={require("../assets/Earth.png")}
-                alt="Earth"
-                style={styles.BottomCard2img}
-              />
-            </Pressable>
+            {/* Bottom Card 1 */}
+            <View style={styles.BottomCard}>
+              <Pressable style={styles.BottomCard1}>
+                <Image
+                  source={require("../assets/Business.png")}
+                  alt="Business"
+                  style={styles.BottomCard1img}
+                />
+              </Pressable>
+              <Text style={styles.BottomCardTitle}>Business</Text>
+              {/* Title for Bottom Card 1 */}
+            </View>
+
+            {/* Bottom Card 2 */}
+            <View style={styles.BottomCard}>
+              <Pressable style={styles.BottomCard2}>
+                <Image
+                  source={require("../assets/Earth.png")}
+                  alt="Earth"
+                  style={styles.BottomCard2img}
+                />
+              </Pressable>
+              <Text style={styles.BottomCardTitle}>Environment</Text>
+              {/* Title for Bottom Card 2 */}
+            </View>
           </View>
         </View>
       </View>
@@ -146,7 +166,7 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
-    gap: 10,
+    gap: 25,
   },
   CardsTop: {
     alignItems: "center",
@@ -154,6 +174,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 25,
   },
+
+  TopCard: {
+    gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  TopCardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#f2f2f2",
+    marginTop: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   TopCard1: {
     height: 150,
     width: 150,
@@ -162,19 +197,18 @@ const styles = StyleSheet.create({
     padding: 10,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginTop: -25,
-    alignItems: "flex-start",  // Align content to the start of the container (left)
-    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    alignItems: "flex-start", // Align content to the start of the container (left)
+    justifyContent: "flex-start", // Align content to the start of the container (top)
     position: "relative",
   },
-  
+
   TopCard1img: {
     height: 125,
     width: 125,
     position: "absolute",
-    top: -25,  // Align the top of the image with the top of the container
-    left: -25,  // Align the left of the image with the left of the container
+    top: -25, // Align the top of the image with the top of the container
+    left: -25, // Align the left of the image with the left of the container
   },
-  
 
   TopCard2: {
     height: 150,
@@ -184,8 +218,8 @@ const styles = StyleSheet.create({
     padding: 10,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginTop: 25,
-    alignItems: "flex-start",  // Align content to the start of the container (left)
-    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    alignItems: "flex-start", // Align content to the start of the container (left)
+    justifyContent: "flex-start", // Align content to the start of the container (top)
     position: "relative",
   },
 
@@ -193,8 +227,8 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25,  // Align the top of the image with the top of the container
-    right: -25,  // Align the left of the image with the left of the container
+    top: -25, // Align the top of the image with the top of the container
+    right: -25, // Align the left of the image with the left of the container
   },
 
   CardsBottom: {
@@ -203,6 +237,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 25,
   },
+  BottomCard: {
+    gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  BottomCardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#f2f2f2",
+    marginTop: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   BottomCard1: {
     height: 150,
     width: 150,
@@ -210,18 +257,18 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     padding: 10,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
-    marginBottom : 25,
-    alignItems: "flex-start",  // Align content to the start of the container (left)
-    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    marginTop: -25,
+    alignItems: "flex-start", // Align content to the start of the container (left)
+    justifyContent: "flex-start", // Align content to the start of the container (top)
     position: "relative",
   },
-  
+
   BottomCard1img: {
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25,  // Align the top of the image with the top of the container
-    left: -25,  // Align the left of the image with the left of the container
+    top: -25, // Align the top of the image with the top of the container
+    left: -25, // Align the left of the image with the left of the container
   },
 
   BottomCard2: {
@@ -231,17 +278,17 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     padding: 10,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
-    marginBottom: -25,
-    alignItems: "flex-start",  // Align content to the start of the container (left)
-    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    marginTop: 25,
+    alignItems: "flex-start", // Align content to the start of the container (left)
+    justifyContent: "flex-start", // Align content to the start of the container (top)
     position: "relative",
   },
   BottomCard2img: {
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25,  // Align the top of the image with the top of the container
-    right: -25,  // Align the left of the image with the left of the container
+    top: -25, // Align the top of the image with the top of the container
+    right: -25, // Align the left of the image with the left of the container
   },
   Bottom: {
     flex: 1,
