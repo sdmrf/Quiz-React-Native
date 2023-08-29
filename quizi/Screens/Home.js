@@ -1,9 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
-
-//Imports
-import { BasketBall } from "../assets/BasketBall.svg";
-import { Rocket } from "../assets/Rocket.svg";
 
 const Home = () => {
   return (
@@ -26,21 +22,38 @@ const Home = () => {
       <View style={styles.HomeMid}>
         <View style={styles.MidCards}>
           <View style={styles.CardsTop}>
-            {/* Wrap your card views with TouchableOpacity */}
-            <TouchableOpacity style={styles.TopCard1}>
-
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.TopCard2}>
-            </TouchableOpacity>
+            {/* Wrap your card views with Pressable */}
+            <Pressable style={styles.TopCard1}>
+              <Image
+                source={require("../assets/BasketBall.png")}
+                alt="BasketBall"
+                style={styles.TopCard1img}
+              />
+            </Pressable>
+            <Pressable style={styles.TopCard2}>
+              <Image
+                source={require("../assets/Rocket.png")}
+                alt="Rocket"
+                style={styles.TopCard2img}
+              />
+            </Pressable>
           </View>
           <View style={styles.CardsBottom}>
-            {/* Wrap your card views with TouchableOpacity */}
-            <TouchableOpacity style={styles.BottomCard1}>
-              <Text>Bottom Card</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.BottomCard2}>
-              <Text>Bottom Card</Text>
-            </TouchableOpacity>
+            {/* Wrap your card views with Pressable */}
+            <Pressable style={styles.BottomCard1}>
+              <Image
+                source={require("../assets/Business.png")}
+                alt="Business"
+                style={styles.BottomCard1img}
+              />
+            </Pressable>
+            <Pressable style={styles.BottomCard2}>
+              <Image
+                source={require("../assets/Earth.png")}
+                alt="Earth"
+                style={styles.BottomCard2img}
+              />
+            </Pressable>
           </View>
         </View>
       </View>
@@ -86,15 +99,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 10,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
   },
 
   UpName: {
     fontSize: 30,
     fontWeight: "bold",
     color: "#445069",
-    textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    textShadowOffset: { width: 1, height: 1 },
   },
   TopDown: {
     flex: 1,
@@ -117,13 +128,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "#fff",
-    textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
   ContentDescp: {
     fontSize: 18,
-    fontWeight: 400,
+    fontWeight: "normal",
     color: "#fff",
-    textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
   HomeMid: {
     flex: 6,
@@ -151,9 +160,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginTop: -25,
+    alignItems: "flex-start",  // Align content to the start of the container (left)
+    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    position: "relative",
   },
+  
+  TopCard1img: {
+    height: 125,
+    width: 125,
+    position: "absolute",
+    top: -25,  // Align the top of the image with the top of the container
+    left: -25,  // Align the left of the image with the left of the container
+  },
+  
 
   TopCard2: {
     height: 150,
@@ -161,8 +182,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginTop: 25,
+    alignItems: "flex-start",  // Align content to the start of the container (left)
+    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    position: "relative",
+  },
+
+  TopCard2img: {
+    height: 150,
+    width: 150,
+    position: "absolute",
+    top: -25,  // Align the top of the image with the top of the container
+    right: -25,  // Align the left of the image with the left of the container
   },
 
   CardsBottom: {
@@ -177,17 +209,39 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    marginBottom: 25,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
+    marginBottom : 25,
+    alignItems: "flex-start",  // Align content to the start of the container (left)
+    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    position: "relative",
   },
+  
+  BottomCard1img: {
+    height: 150,
+    width: 150,
+    position: "absolute",
+    top: -25,  // Align the top of the image with the top of the container
+    left: -25,  // Align the left of the image with the left of the container
+  },
+
   BottomCard2: {
     height: 150,
     width: 150,
     backgroundColor: "#fff",
     borderRadius: 15,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginBottom: -25,
+    alignItems: "flex-start",  // Align content to the start of the container (left)
+    justifyContent: "flex-start",  // Align content to the start of the container (top)
+    position: "relative",
+  },
+  BottomCard2img: {
+    height: 150,
+    width: 150,
+    position: "absolute",
+    top: -25,  // Align the top of the image with the top of the container
+    right: -25,  // Align the left of the image with the left of the container
   },
   Bottom: {
     flex: 1,
