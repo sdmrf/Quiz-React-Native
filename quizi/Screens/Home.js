@@ -1,24 +1,48 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
+
+//Imports
+import { BasketBall } from "../assets/BasketBall.svg";
+import { Rocket } from "../assets/Rocket.svg";
 
 const Home = () => {
   return (
     <View style={styles.Home}>
-      <View style={styles.Top}>
-        <View style={styles.Up}>
-        <View style={styles.Title}>
-          <Text style={styles.Name}>Quizi</Text>
+      <View style={styles.HomeTop}>
+        <View style={styles.TopUp}>
+          <View style={styles.UpTitle}>
+            <Text style={styles.UpName}>Quizi</Text>
+          </View>
         </View>
-        </View>
-        <View style={styles.Down}>
-        <View style={styles.Content}>
-          <Text style={styles.Heading}>Let's Play!</Text>
-          <Text style={styles.Descp}>Choose a category to start playing</Text>
-        </View>
+        <View style={styles.TopDown}>
+          <View style={styles.DownContent}>
+            <Text style={styles.ContentHeading}>Let's Play!</Text>
+            <Text style={styles.ContentDescp}>
+              Choose a category to start playing
+            </Text>
+          </View>
         </View>
       </View>
-      <View style={styles.Mid}>
-        <Text>Mid</Text>
+      <View style={styles.HomeMid}>
+        <View style={styles.MidCards}>
+          <View style={styles.CardsTop}>
+            {/* Wrap your card views with TouchableOpacity */}
+            <TouchableOpacity style={styles.TopCard1}>
+
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.TopCard2}>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.CardsBottom}>
+            {/* Wrap your card views with TouchableOpacity */}
+            <TouchableOpacity style={styles.BottomCard1}>
+              <Text>Bottom Card</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.BottomCard2}>
+              <Text>Bottom Card</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
       <View style={styles.Bottom}>
         <Text>Bottom</Text>
@@ -39,14 +63,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  Top: {
+  HomeTop: {
     flex: 3,
     width: "100%",
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
-  Up: {
+  TopUp: {
     flex: 1,
     width: "100%",
     height: "100%",
@@ -54,58 +78,116 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
   },
-  Title : {
+  UpTitle: {
     width: "100%",
     height: "50%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#f5f5f5",
     borderRadius: 10,
     padding: 10,
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
 
-  Name: {
+  UpName: {
     fontSize: 30,
     fontWeight: "bold",
     color: "#445069",
     textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    textShadowOffset: { width: 1, height: 1 }, 
-
+    textShadowOffset: { width: 1, height: 1 },
   },
-  Down : {
+  TopDown: {
     flex: 1,
     width: "100%",
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
-  Content: {
+  DownContent: {
     width: "100%",
     height: "100%",
     justifyContent: "center",
-    padding: 10,
+    paddingTop: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
     gap: 5,
   },
-  Heading: {
+  ContentHeading: {
     fontSize: 30,
     fontWeight: "bold",
     color: "#fff",
     textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   },
-  Descp: {
+  ContentDescp: {
     fontSize: 18,
     fontWeight: 400,
     color: "#fff",
     textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-
   },
-  Mid: {
+  HomeMid: {
     flex: 6,
     width: "100%",
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
+  },
+  MidCards: {
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+  },
+  CardsTop: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    gap: 25,
+  },
+  TopCard1: {
+    height: 150,
+    width: 150,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 10,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    marginTop: -25,
+  },
+
+  TopCard2: {
+    height: 150,
+    width: 150,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 10,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    marginTop: 25,
+  },
+
+  CardsBottom: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 25,
+  },
+  BottomCard1: {
+    height: 150,
+    width: 150,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 10,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    marginBottom: 25,
+  },
+  BottomCard2: {
+    height: 150,
+    width: 150,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 10,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    marginBottom: -25,
   },
   Bottom: {
     flex: 1,
