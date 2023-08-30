@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
+import { List } from "@phosphor-icons/react";
 
 const Home = () => {
   return (
@@ -78,7 +79,9 @@ const Home = () => {
         </View>
       </View>
       <View style={styles.Bottom}>
-        <Text>Bottom</Text>
+        <Pressable style={styles.BottomMenu}>
+          <List color="#fff" size={40} />
+        </Pressable>
       </View>
     </View>
   );
@@ -294,7 +297,16 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: "100%",
+    justifyContent: "end",
+  },
+  BottomMenu: {
+    width: "20%",
+    height: "75%",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#FF6301",
+    borderTopRightRadius: 25,
+    padding: 10,
+    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
   },
 });
