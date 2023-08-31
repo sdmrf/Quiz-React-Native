@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
   },
 
   TopCard1img: {
+    filter: "drop-shadow( 5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 125,
     width: 125,
     position: "absolute",
@@ -227,6 +228,7 @@ const styles = StyleSheet.create({
   },
 
   TopCard2img: {
+    filter: "drop-shadow( -5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
@@ -267,6 +269,7 @@ const styles = StyleSheet.create({
   },
 
   BottomCard1img: {
+    filter: "drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
@@ -287,6 +290,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   BottomCard2img: {
+    filter: "drop-shadow( -5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
