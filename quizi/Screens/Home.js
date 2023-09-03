@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
-import { List } from "@phosphor-icons/react";
 
 const Home = () => {
   return (
@@ -80,7 +79,11 @@ const Home = () => {
       </View>
       <View style={styles.Bottom}>
         <Pressable style={styles.BottomMenu}>
-          <List color="#fff" size={40} />
+          <Image
+            source={require("../assets/list.png")}
+            alt="List"
+            style={styles.BottomMenuList}
+          />
         </Pressable>
       </View>
     </View>
@@ -198,20 +201,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 15,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
     marginTop: -25,
-    alignItems: "flex-start", // Align content to the start of the container (left)
-    justifyContent: "flex-start", // Align content to the start of the container (top)
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
     position: "relative",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 5, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
 
   TopCard1img: {
-    filter: "drop-shadow( 5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 125,
     width: 125,
     position: "absolute",
-    top: -25, // Align the top of the image with the top of the container
-    left: -25, // Align the left of the image with the left of the container
+    top: -25,
+    left: -25,
   },
 
   TopCard2: {
@@ -228,12 +233,15 @@ const styles = StyleSheet.create({
   },
 
   TopCard2img: {
-    filter: "drop-shadow( -5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25, // Align the top of the image with the top of the container
-    right: -25, // Align the left of the image with the left of the container
+    top: -25,
+    right: -25,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: -5, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
 
   CardsBottom: {
@@ -269,12 +277,15 @@ const styles = StyleSheet.create({
   },
 
   BottomCard1img: {
-    filter: "drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25, // Align the top of the image with the top of the container
-    left: -25, // Align the left of the image with the left of the container
+    top: -25,
+    left: -25,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 5, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
 
   BottomCard2: {
@@ -290,27 +301,42 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   BottomCard2img: {
-    filter: "drop-shadow( -5px 5px 3px rgba(0, 0, 0, 0.25))",
     height: 150,
     width: 150,
     position: "absolute",
-    top: -25, // Align the top of the image with the top of the container
-    right: -25, // Align the left of the image with the left of the container
+    top: -25,
+    right: -25,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: -5, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
   Bottom: {
     flex: 1,
     width: "100%",
     height: "100%",
-    justifyContent: "end",
+    justifyContent: "flex-end",
   },
   BottomMenu: {
     width: "20%",
-    height: "75%",
+    height: "70%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#FF6301",
     borderTopRightRadius: 25,
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", // Use boxShadow here
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: -4, height: -4 },
+    shadowRadius: 4,
+    shadowOpacity: 1,
+  },
+  BottomMenuList: {
+    height: 25,
+    width: 25,
+
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: -5, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
   },
 });

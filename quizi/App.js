@@ -6,7 +6,7 @@ import Quiz from "./Screens/Quiz";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Quiz />
+      <Home />
       <StatusBar style="auto" />
     </View>
   );
