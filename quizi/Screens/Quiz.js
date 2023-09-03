@@ -42,36 +42,42 @@ const Quiz = () => {
                 style={[
                   styles.Option,
                   {
-                    backgroundColor:
-                      selectedOption === option
-                        ? "rgba(85, 110, 255, 0.5)"
-                        : "rgba(255, 255, 255, 1)",
+                    backgroundColor: selectedOption === option ? "#03C988" : "#FFFFFF",
                   },
                 ]}
                 underlayColor="rgba(85, 110, 255, 0.8)"
                 onPress={() => handleOptionPress(option)}
               >
-                <Text
-                  style={[
-                    styles.OptionText,
-                    {
-                      color: selectedOption === option ? "#FFFFFF" : "#556bf4",
-                    },
-                  ]}
-                >
-                  {option}
-                </Text>
+                <Text style={[styles.OptionText,
+                {
+                  color: selectedOption === option ? "#FFFFFF" : "#556bf4",
+                }
+                ]}>{option}</Text>
               </TouchableHighlight>
             ))}
           </View>
         </View>
       </View>
       <View style={styles.QuizBottom}>
-        <View style={styles.BottomQuit}>
-          <Text style={styles.QuitText}>Quit</Text>
+        <View style={styles.BottomUp}>
+          <TouchableHighlight
+            style={[
+              styles.BottomUpButton,
+              {
+                backgroundColor:
+                  selectedOption === null ? "#FF6301" : "#03C988",
+              },
+            ]}
+          >
+            <Text style={styles.BottomUpButtonText}>
+              {selectedOption ? "Next" : "Skip"}
+            </Text>
+          </TouchableHighlight>
         </View>
-        <View style={styles.BottomNext}>
-          <Text style={styles.NextText}>Next</Text>
+        <View style={styles.BottomDown}>
+          <TouchableHighlight style={styles.BottomDownButton}>
+            <Text style={styles.BottomDownButtonText}>Submit</Text>
+          </TouchableHighlight>
         </View>
       </View>
     </View>
@@ -82,10 +88,10 @@ export default Quiz;
 
 const styles = StyleSheet.create({
   Quiz: {
+    flex: 1,
     height: "100%",
     width: "100%",
     backgroundColor: "#6284FF",
-    backgroundImage: "linear-gradient(275deg, #6284FF 1%, #556bf4 99%)",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -102,10 +108,13 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "rgba(85, 110, 255, 0.25)",
     borderRadius: 15,
-    border: "1px solid #FFFFFF",
+    borderWidth: 2,
+    borderColor: "#FFFFFF",
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    textShadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 4,
+    shadowOpacity: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -124,8 +133,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   ProgressBar: {
-    width: "100%",
-    height: "100%",
+    width: 300,
+    height: 20,
     borderRadius: 10,
   },
   TopCurrQue: {
@@ -135,8 +144,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
-    alignItems: "center",
-    justifyContent: "center",
   },
   CurrQue: {
     fontSize: 25,
@@ -163,7 +170,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "#F2F2F2",
-    textShadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
   },
   Options: {
     flex: 4,
@@ -173,22 +180,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 10,
     padding: 10,
+    flexDirection: "column",
     gap: 10,
-    
   },
   Option: {
-    flex: 1,
     width: "100%",
-    height: "100%",
     backgroundColor: "rgba(255, 255, 255, 1)",
     borderRadius: 15,
-    border: "1px solid #FFFFFF",
+    borderWidth: 2,
+    borderColor: "#FFFFFF",
     padding: 10,
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-    textShadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 4,
+    shadowOpacity: 1,
     alignItems: "center",
     justifyContent: "center",
-    
   },
   OptionText: {
     fontSize: 25,
@@ -199,9 +206,62 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: "100%",
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "space-between",
-    padding: 10,
     flexDirection: "row",
+  },
+  BottomUp: {
+    flex: 1,
+    height: "50%",
+    width: "100%",
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
+  BottomUpButton: {
+    flex: 1,
+    width: "50%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FF6301",
+    borderTopRightRadius: 25,
+    padding: 10,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: 4, height: -4 },
+    shadowRadius: 4,
+    shadowOpacity: 1,
+  },
+  BottomUpButtonText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#F2F2F2",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+  },
+  BottomDown: {
+    flex: 1,
+    height: "50%",
+    width: "100%",
+    alignItems: "flex-end",
+    justifyContent: "center",
+  },
+  BottomDownButton: {
+    flex: 1,
+    width: "50%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FF6301",
+    borderTopLeftRadius: 25,
+    padding: 10,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowOffset: { width: -4, height: -4 },
+    shadowRadius: 4,
+    shadowOpacity: 1,
+  },
+  BottomDownButtonText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#F2F2F2",
+    shadowColor: "rgba(0, 0, 0, 0.25)",
   },
 });
