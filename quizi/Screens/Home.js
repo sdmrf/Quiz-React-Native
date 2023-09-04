@@ -7,7 +7,7 @@ const Home = () => {
       <View style={styles.HomeTop}>
         <View style={styles.TopUp}>
           <View style={styles.UpTitle}>
-            <Text style={styles.UpName}>Quizi</Text>
+            ?<Text style={styles.UpName}>Quizi</Text>
           </View>
         </View>
         <View style={styles.TopDown}>

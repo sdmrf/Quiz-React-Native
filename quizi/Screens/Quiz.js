@@ -42,17 +42,23 @@ const Quiz = () => {
                 style={[
                   styles.Option,
                   {
-                    backgroundColor: selectedOption === option ? "#03C988" : "#FFFFFF",
+                    backgroundColor:
+                      selectedOption === option ? "#03C988" : "#FFFFFF",
                   },
                 ]}
                 underlayColor="rgba(85, 110, 255, 0.8)"
                 onPress={() => handleOptionPress(option)}
               >
-                <Text style={[styles.OptionText,
-                {
-                  color: selectedOption === option ? "#FFFFFF" : "#556bf4",
-                }
-                ]}>{option}</Text>
+                <Text
+                  style={[
+                    styles.OptionText,
+                    {
+                      color: selectedOption === option ? "#FFFFFF" : "#556bf4",
+                    },
+                  ]}
+                >
+                  {option}
+                </Text>
               </TouchableHighlight>
             ))}
           </View>
